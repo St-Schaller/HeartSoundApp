@@ -48,6 +48,7 @@ abstract public class BaseActivity extends AppCompatActivity {
     private void setActionBar() {
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
+
         }
     }
 

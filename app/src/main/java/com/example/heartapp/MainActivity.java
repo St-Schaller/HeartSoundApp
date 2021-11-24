@@ -2,23 +2,22 @@ package com.example.heartapp;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.ImageButton;
-
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 import com.example.heartapp.visualizer.LineVisualizer;
-import com.example.heartapp.visualizer.LineVisualizerActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     public static final int AUDIO_PERMISSION_REQUEST_CODE = 102;
 
     public static final String[] WRITE_EXTERNAL_STORAGE_PERMS = {
@@ -26,13 +25,33 @@ public class MainActivity extends AppCompatActivity {
     };
 
     protected MediaPlayer mediaPlayer;
+    String animalList[] = {"Lion","Tiger","Monkey","Elephant","Dog","Cat","Camel"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initialize();
+        Spinner menu = findViewById(R.id.menu);
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.dropdown_item, R.id.menu, animalList);
+        menu.setAdapter(arrayAdapter);
     }
 
+    private void initialize() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M
+                && checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(WRITE_EXTERNAL_STORAGE_PERMS, AUDIO_PERMISSION_REQUEST_CODE);
+        } else {
+            setPlayer();
+        }
+    }
+
+    private void setPlayer() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.red_e);
+        mediaPlayer.setLooping(false);
+    }
 
     public void replay(View view) {
         if (mediaPlayer != null) {
@@ -41,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playPause(View view) {
-        initialize();
+
         LineVisualizer lineVisualizer = findViewById(R.id.visualizer);
         // set custom color to the line.
-        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.custom));
+        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.colorAccent));
 
         // set the line with for the visualizer between 1-10 default 1.
         lineVisualizer.setStrokeWidth(5);
@@ -70,20 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void initialize() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M
-                && checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(WRITE_EXTERNAL_STORAGE_PERMS, AUDIO_PERMISSION_REQUEST_CODE);
-        } else {
-            setPlayer();
-        }
-    }
-
-
-    private void setPlayer() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.red_e);
-        mediaPlayer.setLooping(false);
-    }
 
     @Override
     protected void onStop() {
@@ -109,17 +114,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
-    //protected int getLayout() {return R.layout.activity_line_visualizer;
-    // }
-
-    //public void line(View view) {startActivity(LineVisualizerActivity.class);}
-
-
-
-
-    /*public void startActivity(Class clazz) {
-        startActivity(new Intent(this, clazz));
-    }*/
 }

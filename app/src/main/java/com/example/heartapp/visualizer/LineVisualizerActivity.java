@@ -32,8 +32,8 @@ public class LineVisualizerActivity extends BaseActivity {
         playPauseBtnClicked((ImageButton) view);
     }
 
-    @Override
-    protected int getLayout() {
-        return R.layout.activity_line_visualizer;
-    }
+    //@Override
+    //protected int getLayout() {
+        //return R.layout.activity_line_visualizer;
+    //}
 }

@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <Button
+    <TextView
+        android:id="@+id/headline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@color/custom"
-        android:onClick="replay"
-        android:text="@string/line_visualizer"
-        android:textColor="@color/white"/>
+        android:text="@string/headline"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="model">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <com.example.heartapp.visualizer.LineVisualizer
         android:id="@+id/visualizer"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_width="689dp"
+        android:layout_height="99dp"
+        android:layout_below="@id/headline"
+        android:layout_centerHorizontal="true"/>
 
-    <ImageButton
-        android:id="@+id/ib_replay"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/image_replay_button"
-        android:onClick="replay"
-        android:src="@drawable/ic_replay_red_48dp" />
-
-    <ImageButton
-        android:id="@+id/ib_play_pause"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/image_play_pause"
-        android:onClick="playPause"
-        android:src="@drawable/ic_play_red_48dp" />
+    <include
+        android:id="@+id/buttons"
+        layout="@layout/layout_audio_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/visualizer"
+        android:layout_centerHorizontal="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>
