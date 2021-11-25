@@ -4,17 +4,32 @@
     <string name="image_replay_button">Replay Button</string>
     <string name="headline">Heart Sound</string>
     <string name="line_visualizer">Line Visualizer</string>
-    <string name="bar_visualizer">Bar Visualizer</string>
-    <string name="circle_visualizer">Circle Visualizer</string>
-    <string name="circle_bar_visualizer">Circle Bar Visualizer</string>
     <string name="line_bar_visualizer">Line Bar Visualizer</string>
     <string name="activity_with_service">Activity With Service</string>
-    <string name="square_bar_visualizer">Square Bar Visualizer</string>
+
     <string-array name="model">
-        <item>Sad</item>
-        <item>Dissatisfied</item>
-        <item>Satisfied</item>
-        <item>Happy</item>
-        <item>Excited</item>
+        <item>CNN</item>
+        <item>DeepSpectrum</item>
+        <item>OpenL3</item>
+    </string-array>
+    <string-array name="location">
+        <item>Aortic area</item>
+        <item>Pulmonic area</item>
+        <item>Tricuspid area</item>
+        <item>Mitral area</item>
+    </string-array>
+    <string-array name="species">
+        <item>Human</item>
+        <item>Dog</item>
+        <item>Cat</item>
     </string-array>
 </resources>
+ <!--
+ HUMAN
+    - Aortic area centred at the second right intercostal space.
+    - Pulmonic area in the second intercostal space along the left sternal border.
+    - Tricuspid area in the fourth intercostal space along the left sternal edge.
+    - Mitral area at the cardiac apex, in the fifth intercostal space on the midclavicular line.
+
+  ANIMAL -> PABST
+  -->
