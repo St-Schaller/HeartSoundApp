@@ -19,8 +19,7 @@ import android.widget.Toast;
 
 import com.example.heartapp.visualizer.LineVisualizer;
 
-public class MainActivity extends AppCompatActivity implements
-        AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     public static final int AUDIO_PERMISSION_REQUEST_CODE = 102;
 
@@ -44,42 +43,46 @@ public class MainActivity extends AppCompatActivity implements
                 R.array.model, R.layout.dropdown_item);
         //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         modelspinner.setAdapter(modeladapter);
-        modelspinner.setOnItemSelectedListener(this);
+        modelspinner.setOnItemSelectedListener(myListener);
 
         ArrayAdapter<CharSequence> locationadapter = ArrayAdapter.createFromResource(this,
                 R.array.location, R.layout.dropdown_item);
         locationspinner.setAdapter(locationadapter);
-        locationspinner.setOnItemSelectedListener(this);
+        locationspinner.setOnItemSelectedListener(myListener);
 
         ArrayAdapter<CharSequence> speciesadapter = ArrayAdapter.createFromResource(this,
                 R.array.species, R.layout.dropdown_item);
         speciesspinner.setAdapter(speciesadapter);
-        speciesspinner.setOnItemSelectedListener(this);
+        speciesspinner.setOnItemSelectedListener(myListener);
 
 
     }
 
-    //Performing action onItemSelected and onNothing selected
-    @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-        switch (position) {
-            case 1:
-                Toast.makeText(MainActivity.this,position + "Spinner 1", Toast.LENGTH_LONG).show();
-                break;
-            case 2:
-                Toast.makeText(MainActivity.this, position + "Spinner 2", Toast.LENGTH_LONG).show();
-                break;
-            case 3:
-                Toast.makeText(MainActivity.this, position + "Spinner 3", Toast.LENGTH_LONG).show();
-                break;
+    AdapterView.OnItemSelectedListener myListener=new AdapterView.OnItemSelectedListener() {
+        //Performing action onItemSelected and onNothing selected
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View arg1, int position, long id) {
+            switch (parent.getId()) {
+                case R.id.modelSpinner:
+                    Toast.makeText(MainActivity.this, "Spinner 1", Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.locationSpinner:Spinner:
+                    Toast.makeText(MainActivity.this, "Spinner 2", Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.speciesSpinner:
+                    Toast.makeText(MainActivity.this, "Spinner 3", Toast.LENGTH_LONG).show();
+                    break;
+            }
         }
-    }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
 
     }
+
+    };
 
     private void initialize() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements
 
         LineVisualizer lineVisualizer = findViewById(R.id.visualizer);
         // set custom color to the line.
-        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.colorAccent));
+        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.LightGreen));
 
         // set the line with for the visualizer between 1-10 default 1.
         lineVisualizer.setStrokeWidth(5);

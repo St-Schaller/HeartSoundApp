@@ -13,7 +13,7 @@ public class LineVisualizerActivity extends BaseActivity {
     protected void init() {
         LineVisualizer lineVisualizer = findViewById(R.id.visualizer);
         // set custom color to the line.
-        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.custom));
+        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.LightGreen));
 
         // set the line with for the visualizer between 1-10 default 1.
         lineVisualizer.setStrokeWidth(1);

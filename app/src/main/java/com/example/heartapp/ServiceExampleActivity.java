@@ -33,7 +33,7 @@ public class ServiceExampleActivity extends AppCompatActivity {
         lineVisualizer = findViewById(R.id.visualizer);
 
         // set custom color to the line.
-        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.custom));
+        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.LightGreen));
 
         // define custom number of bars you want in the visualizer between (10 - 256).
         lineVisualizer.setStrokeWidth(70);
