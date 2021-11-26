@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -38,51 +40,36 @@ public class MainActivity extends AppCompatActivity {
         Spinner modelspinner = (Spinner) findViewById(R.id.modelSpinner);
         Spinner locationspinner = (Spinner) findViewById(R.id.locationSpinner);
         Spinner speciesspinner = (Spinner) findViewById(R.id.speciesSpinner);
+        RelativeLayout results = findViewById(R.id.resultContainer);
+        results.setClipToOutline(true);
+        RelativeLayout visualizerContainer = findViewById(R.id.visualizerContainer);
+        visualizerContainer.setClipToOutline(true);
 
         ArrayAdapter<CharSequence> modeladapter = ArrayAdapter.createFromResource(this,
                 R.array.model, R.layout.dropdown_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         modelspinner.setAdapter(modeladapter);
-        modelspinner.setOnItemSelectedListener(myListener);
 
         ArrayAdapter<CharSequence> locationadapter = ArrayAdapter.createFromResource(this,
                 R.array.location, R.layout.dropdown_item);
         locationspinner.setAdapter(locationadapter);
-        locationspinner.setOnItemSelectedListener(myListener);
 
         ArrayAdapter<CharSequence> speciesadapter = ArrayAdapter.createFromResource(this,
                 R.array.species, R.layout.dropdown_item);
         speciesspinner.setAdapter(speciesadapter);
-        speciesspinner.setOnItemSelectedListener(myListener);
+
+
+        LineVisualizer lineVisualizer = findViewById(R.id.visualizer);
+        // set custom color to the line.
+        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.DarkGreen));
+        // set the line with for the visualizer between 1-10 default 1.
+        lineVisualizer.setStrokeWidth(5);
+        // Set you media player to the visualizer.
+        lineVisualizer.setPlayer(mediaPlayer.getAudioSessionId());
 
 
     }
 
-    AdapterView.OnItemSelectedListener myListener=new AdapterView.OnItemSelectedListener() {
-        //Performing action onItemSelected and onNothing selected
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View arg1, int position, long id) {
-            switch (parent.getId()) {
-                case R.id.modelSpinner:
-                    Toast.makeText(MainActivity.this, "Spinner 1", Toast.LENGTH_LONG).show();
-                    break;
-                case R.id.locationSpinner:Spinner:
-                    Toast.makeText(MainActivity.this, "Spinner 2", Toast.LENGTH_LONG).show();
-                    break;
-                case R.id.speciesSpinner:
-                    Toast.makeText(MainActivity.this, "Spinner 3", Toast.LENGTH_LONG).show();
-                    break;
-            }
-        }
 
-
-    @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-
-    }
-
-    };
 
     private void initialize() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M
@@ -92,6 +79,26 @@ public class MainActivity extends AppCompatActivity {
             setPlayer();
         }
     }
+
+    public void record(View view){
+        Toast.makeText(MainActivity.this, "Recording", Toast.LENGTH_LONG).show();
+    }
+
+    public void evaluate(View view){
+        Spinner modelSpinner = (Spinner) findViewById(R.id.modelSpinner);
+        Spinner locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        Spinner speciesSpinner = (Spinner) findViewById(R.id.speciesSpinner);
+        String model = modelSpinner.getSelectedItem().toString();
+        String location = locationSpinner.getSelectedItem().toString();
+        String species = speciesSpinner.getSelectedItem().toString();
+        TextView abnormalOutput = findViewById(R.id.abnormalOutput);
+        abnormalOutput.setText(model + " " + location);
+        TextView normalOutput = (TextView) findViewById(R.id.normalOutput);
+        normalOutput.setText(species);
+        Toast.makeText(MainActivity.this, "Evaluating", Toast.LENGTH_LONG).show();
+    }
+
+
 
     private void setPlayer() {
         mediaPlayer = MediaPlayer.create(this, R.raw.red_e);
@@ -104,21 +111,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public void playPause(View view) {
-
-        LineVisualizer lineVisualizer = findViewById(R.id.visualizer);
-        // set custom color to the line.
-        lineVisualizer.setColor(ContextCompat.getColor(this, R.color.LightGreen));
-
-        // set the line with for the visualizer between 1-10 default 1.
-        lineVisualizer.setStrokeWidth(5);
-
-        // Set you media player to the visualizer.
-        lineVisualizer.setPlayer(mediaPlayer.getAudioSessionId());
-        playPauseBtnClicked((ImageButton) view);
-    }
-
-    public void playPauseBtnClicked(ImageButton btnPlayPause) {
+        ImageButton btnPlayPause = (ImageButton) view;
         if (mediaPlayer != null) {
             if (mediaPlayer.isPlaying()) {
                 mediaPlayer.pause();

@@ -1,40 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/buttons_container"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:orientation="horizontal">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
 
-    <Button
-        android:id="@+id/btn_first"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:backgroundTint="@color/LightGreen"
-        android:textColor="@color/white"
-        android:text="button_1"
-        android:layout_margin="10dp"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/btn_second"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:backgroundTint="@color/Beige"
-        android:textColor="@color/white"
-        android:text="button_2"
-        android:layout_margin="10dp"/>
+    <RelativeLayout
+        android:id="@+id/resultContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_outline"
+        android:elevation="10dp"
 
-    <Button
-        android:id="@+id/btn_third"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:backgroundTint="@color/LightGreen"
-        android:textColor="@color/white"
-        android:text="button_3"
-        android:layout_margin="10dp"/>
+        >
 
-</LinearLayout>
+<!---
+        <TextView
+            android:id="@+id/resultField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignStart="@id/abnormal"
+            android:layout_alignEnd="@id/normal"
+            android:background="@color/Beige"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="Results"
+            android:textColor="@color/white"
+            />
+            -->
 
+
+        <TextView
+            android:id="@+id/abnormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/Beige"
+            android:padding="10dp"
+            android:text="Abnormal"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+
+             />
+        <!---android:layout_below="@id/resultField"-->
+
+        <TextView
+            android:id="@+id/abnormalOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/abnormal"
+            android:layout_alignTop="@id/abnormal"
+            android:background="#0D5ebf95"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="Test"
+            android:textAlignment="center"
+            android:textColor="@color/DarkGreen"/>
+
+
+
+
+        <TextView
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/abnormal"
+            android:layout_toRightOf="@id/normalOutput"
+            android:background="@color/Beige"
+            android:padding="10dp"
+            android:text="Normal"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/normalOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/abnormal"
+            android:layout_toRightOf="@id/abnormalOutput"
+            android:background="#0D5ebf95"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="Test2"
+            android:textAlignment="center"
+            android:textColor="@color/DarkGreen" />
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

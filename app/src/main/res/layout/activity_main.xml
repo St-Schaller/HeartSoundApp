@@ -7,6 +7,7 @@
     <include
         android:id="@+id/spinners"
         layout="@layout/selection_spinners"
+        android:layout_alignParentStart="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -15,7 +16,7 @@
     <include
         android:id="@+id/results"
         layout="@layout/result_grid"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -24,27 +25,39 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp" />
 
-
-    <com.example.heartapp.visualizer.LineVisualizer
-        android:id="@+id/visualizer"
+    <RelativeLayout
+        android:id="@+id/visualizerContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/buttons"
-        android:layout_below="@id/spinners"
+        android:layout_height="match_parent"
         android:layout_alignStart="@id/spinners"
         android:layout_alignEnd="@id/spinners"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="true" />
-
-    <include
-        android:id="@+id/buttons"
-        layout="@layout/layout_audio_buttons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_above="@id/results"
-        android:layout_alignParentBottom="false"
+        android:layout_below="@id/spinners"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_outline"
+
+        >
+
+
+        <com.example.heartapp.visualizer.LineVisualizer
+            android:id="@+id/visualizer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/buttons"
+            android:background="@android:color/white"
+            android:backgroundTint="#335ebf95" />
+
+        <include
+            android:id="@+id/buttons"
+            layout="@layout/layout_audio_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
