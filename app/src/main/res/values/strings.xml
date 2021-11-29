@@ -18,6 +18,10 @@
         <item>Tricuspid area</item>
         <item>Mitral area</item>
     </string-array>
+    <string-array name="connection">
+        <item>Bluetooth</item>
+        <item>WiFi</item>
+    </string-array>
     <string-array name="species">
         <item>Human</item>
         <item>Dog</item>

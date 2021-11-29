@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:id="@+id/resultgrid"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/resultContainer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/rounded_outline"
-        android:elevation="10dp"
-
-        >
+        android:elevation="0dp">
 
 <!---
         <TextView
@@ -35,61 +34,67 @@
 
         <TextView
             android:id="@+id/abnormal"
+            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/Beige"
             android:padding="10dp"
+            android:layout_weight="1"
             android:text="Abnormal"
-            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:textStyle="bold"
 
-             />
+            />
         <!---android:layout_below="@id/resultField"-->
 
         <TextView
             android:id="@+id/abnormalOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/abnormal"
+            android:layout_weight="1"
             android:layout_alignTop="@id/abnormal"
+            android:layout_toRightOf="@id/abnormal"
             android:background="#0D5ebf95"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="Test"
             android:textAlignment="center"
-            android:textColor="@color/DarkGreen"/>
+            android:textColor="@color/Beige"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/normalOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_alignTop="@id/abnormal"
+            android:layout_toRightOf="@id/abnormalOutput"
+            android:background="#0D5ebf95"
+            android:padding="10dp"
+            android:text="Test2"
+            android:textAlignment="center"
 
+            android:textColor="@color/Beige"
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_alignTop="@id/abnormal"
             android:layout_toRightOf="@id/normalOutput"
             android:background="@color/Beige"
             android:padding="10dp"
             android:text="Normal"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/normalOutput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/abnormal"
-            android:layout_toRightOf="@id/abnormalOutput"
-            android:background="#0D5ebf95"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:text="Test2"
-            android:textAlignment="center"
-            android:textColor="@color/DarkGreen" />
 
-    </RelativeLayout>
+
+    </LinearLayout>
 
 
 

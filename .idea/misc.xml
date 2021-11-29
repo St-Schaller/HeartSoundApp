@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/border.xml" value="0.10364583333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/border_light.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_heart_background.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_pause_red_48dp.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_play_red_48dp.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_replay_red_48dp.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/ic_stethoscope_background.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/rounded_outline.xml" value="0.15925925925925927" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/activity_line_visualizer.xml" value="0.10054347826086957" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/activity_service_example.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/dropdown_item.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/layout_audio_buttons.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/result_grid.xml" value="0.22" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/selection_spinners.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/simple_spinner_item.xml" value="0.14402173913043478" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/spinner.xml" value="0.1118659420289855" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/spinner_grid.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/text_grid.xml" value="0.1" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/layout/visualizer_container.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/mipmap-anydpi-v26/ic_stethoscope.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/mipmap-anydpi-v26/ic_stethoscope_round.xml" value="0.10833333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

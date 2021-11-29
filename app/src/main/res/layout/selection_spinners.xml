@@ -96,7 +96,7 @@
 
         <RelativeLayout
 
-            android:id="@+id/speciesList"
+            android:id="@+id/connectionList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -115,7 +115,7 @@
                 android:background="@drawable/border">
 
                 <Spinner
-                    android:id="@+id/speciesSpinner"
+                    android:id="@+id/connectionSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:overlapAnchor="false"
@@ -133,7 +133,7 @@
                 android:background="@color/white"
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp"
-                android:text="Species"
+                android:text="Connection"
                 android:textColor="@color/DarkGreen" />
 
         </RelativeLayout>

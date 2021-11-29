@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_outline">
+
+   <!-- <LinearLayout
+        android:id="@+id/visualizerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintHeight_max="500dp"
+        app:layout_constraintHeight_min="500dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/rounded_outline"
+        >-->
+
+    <RelativeLayout
+        android:id="@+id/visualizerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_outline">
+
+
+        <com.example.heartapp.visualizer.LineVisualizer
+            android:id="@+id/visualizer"
+            android:foregroundGravity="clip_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/buttons"
+            android:background="@android:color/white"
+            android:backgroundTint="#335ebf95" />
+
+        <include
+            android:id="@+id/buttons"
+            layout="@layout/layout_audio_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="false" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
