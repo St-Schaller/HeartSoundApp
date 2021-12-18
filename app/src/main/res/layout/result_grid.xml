@@ -39,9 +39,10 @@
             android:layout_weight="1"
             android:layout_alignTop="@id/results"
             android:layout_toRightOf="@id/results"
-            android:background="#0D5ebf95"
+            android:background="#265ebf95"
             android:padding="10dp"
             android:text=""
+            android:minWidth="90dp"
             android:textAlignment="center"
             android:textColor="@color/Beige"
             android:textStyle="bold" />

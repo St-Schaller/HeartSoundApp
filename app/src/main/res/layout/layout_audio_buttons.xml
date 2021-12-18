@@ -13,16 +13,6 @@
         android:layout_centerVertical="true"
         >
 
-<!--
-        <ImageButton
-            android:id="@+id/replay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ib_play_pause"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/image_replay_button"
-            android:onClick="replay"
-            android:src="@drawable/ic_replay_red_48dp" /> -->
 
         <ImageButton
             android:id="@+id/evaluate"
@@ -35,7 +25,9 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/image_replay_button"
             android:onClick="evaluate"
-            android:scaleType="center"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:scaleType="centerInside"
             android:src="@mipmap/ic_heart_foreground"
             android:tint="@android:color/white" />
 
@@ -48,6 +40,7 @@
             android:contentDescription="@string/image_play_pause"
             android:fillColor="@color/white"
             android:onClick="playPause"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_play_red_48dp"
             android:tint="@android:color/white" />
 
@@ -56,7 +49,7 @@
             android:id="@+id/record"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="center"
+            android:scaleType="centerInside"
             android:adjustViewBounds="true"
             android:layout_alignStart="@id/ib_play_pause"
             android:layout_alignEnd="@id/ib_play_pause"
@@ -64,6 +57,8 @@
             android:contentDescription="@string/image_play_pause"
             android:fillColor="@color/white"
             android:onClick="record"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:src="@mipmap/ic_stethoscope_foreground"
             android:tint="@android:color/white" />
     </RelativeLayout>

@@ -30,6 +30,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private Channel channel;
     private BroadcastReceiver wifiReceiver;
     private String url = "https://heartsoundsanalysis.herokuapp.com/predict";
-    private String filePath;
+    private String filePath = null;
     private LineVisualizer lineVisualizer;
 
 
@@ -114,11 +115,11 @@ public class MainActivity extends AppCompatActivity {
         // set custom color to the line.
         lineVisualizer.setColor(ContextCompat.getColor(this, R.color.DarkGreen));
         // set the line with for the visualizer between 1-10 default 1.
-        lineVisualizer.setStrokeWidth(1);
+        lineVisualizer.setStrokeWidth(5);
         // Set you media player to the visualizer.
         lineVisualizer.setPlayer(mediaPlayer.getAudioSessionId());
 
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+
 
         Button btnChooseFile = (Button) findViewById(R.id.btn_choose_file);
 
@@ -131,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
                         .withChosenListener(new ChooserDialog.Result() {
                             @Override
                             public void onChoosePath(String path, File pathFile) {
+                                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                                    ImageButton btnPlayPause = findViewById(R.id.ib_play_pause);
+                                    mediaPlayer.pause();
+                                    btnPlayPause.setImageDrawable(ContextCompat.getDrawable(
+                                            MainActivity.this,
+                                            R.drawable.ic_play_red_48dp));
+                                }
                                 Toast.makeText(MainActivity.this, "FILE: " + path +" selected", Toast.LENGTH_SHORT).show();
                                 filePath = path;
                                 setPlayerWithPath(pathFile);
@@ -141,14 +149,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (width > 2000) {
-
+        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
+        if (height > 1500) {
             ViewGroup.MarginLayoutParams params1 = (ViewGroup.MarginLayoutParams) results.getLayoutParams();
             params1.width = 1500;
+            lineVisualizer.setStrokeWidth(3);
             TextView resulttextview = findViewById(R.id.resultstextview);
             resulttextview.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
             TextView resultsOutput = findViewById(R.id.resultOutput);
             resultsOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+            ImageButton stethoscope = findViewById(R.id.record);
+            stethoscope.setScaleType(ImageView.ScaleType.CENTER);
+            ImageButton heart = findViewById(R.id.evaluate);
+            heart.setScaleType(ImageView.ScaleType.CENTER);
 
         }
 
@@ -190,6 +203,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void evaluate(View view) {
+        if(filePath == null){
+            Toast.makeText(MainActivity.this, "No File selected!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Spinner modelSpinner = findViewById(R.id.modelSpinner);
         Spinner extractorSpinner = findViewById(R.id.extractorSpinner);
 
@@ -234,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setPlayerWithPath(File file) {
-        mediaPlayer = MediaPlayer.create(this, R.raw.murmur_201101180902);
+        mediaPlayer = MediaPlayer.create(this, Uri.fromFile(file));
         mediaPlayer.setLooping(false);
         lineVisualizer.setPlayer(mediaPlayer.getAudioSessionId());
     }
@@ -256,7 +273,6 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_play_red_48dp));
             } else {
                 mediaPlayer.start();
-                Toast.makeText(this, mediaPlayer.getTrackInfo().toString(), Toast.LENGTH_SHORT).show();
                 btnPlayPause.setImageDrawable(ContextCompat.getDrawable(
                         this,
                         R.drawable.ic_pause_red_48dp));

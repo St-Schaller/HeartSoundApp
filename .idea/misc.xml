@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_pause_red_48dp.xml" value="0.29375" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_play_red_48dp.xml" value="0.29375" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/activity_main.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/dropdown_item.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/layout_audio_buttons.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/result_grid.xml" value="0.23505434782608695" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/selection_spinners.xml" value="0.33" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/visualizer_container.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/border.xml" value="0.10364583333333334" />
         <entry key="..\:/Users/Stefanie Schaller/AndroidStudioProjects/HeartApp/app/src/main/res/drawable/border_light.xml" value="0.1" />
