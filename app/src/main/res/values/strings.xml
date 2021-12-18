@@ -6,17 +6,15 @@
     <string name="line_visualizer">Line Visualizer</string>
     <string name="line_bar_visualizer">Line Bar Visualizer</string>
     <string name="activity_with_service">Activity With Service</string>
+    <string name="title_choose_file">Choose a file</string>
 
     <string-array name="model">
-        <item>CNN</item>
-        <item>DeepSpectrum</item>
-        <item>OpenL3</item>
+        <item>Support Vector Machine</item>
+        <item>k-Nearest Neighbour</item>
     </string-array>
-    <string-array name="location">
-        <item>Aortic area</item>
-        <item>Pulmonic area</item>
-        <item>Tricuspid area</item>
-        <item>Mitral area</item>
+    <string-array name="extractor">
+        <item>Manually extracted Features</item>
+        <item>OpenL3</item>
     </string-array>
     <string-array name="connection">
         <item>Bluetooth</item>
