@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.309375" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/border_light.xml" value="0.1" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_heart_background.xml" value="0.309375" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.309375" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_pause_red_48dp.xml" value="0.29375" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_play_red_48dp.xml" value="0.29375" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/ic_stethoscope_background.xml" value="0.1" />
+        <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/drawable/rounded_outline.xml" value="0.1" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/activity_main.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/dropdown_item.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/HP/StudioProjects/HeartSoundApp/app/src/main/res/layout/layout_audio_buttons.xml" value="0.2164855072463768" />

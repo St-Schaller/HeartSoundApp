@@ -32,16 +32,16 @@
         android:layout_marginBottom="15dp" />
 
 
-        <include
-            layout="@layout/visualizer_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/results"
-            android:layout_below="@id/spinners"
-            android:layout_alignStart="@id/spinners"
-            android:layout_alignEnd="@id/spinners"
-            android:layout_centerInParent="true"
-            android:background="@drawable/rounded_outline"
+    <include
+        layout="@layout/visualizer_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/results"
+        android:layout_below="@id/spinners"
+        android:layout_alignStart="@id/spinners"
+        android:layout_alignEnd="@id/spinners"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_outline"
         />
 
 
